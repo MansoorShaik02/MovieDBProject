@@ -46,6 +46,14 @@ body {
 
   
 }
+
+
+#homevisit p {
+  font-size: 100px;
+  color: aqua;
+  margin: 0px;
+
+}
 #searchbox:focus {
   outline: none;
   background-color: black;

@@ -5,9 +5,6 @@ const imagestuff = 'https://image.tmdb.org/t/p/w500';
 const mainy = document.getElementById("actual")
 const formdata = document.getElementById("formsearch")
 const search = document.getElementById("searchbox")
-
-
-
 const urlsearch = start + '/search/movie?' + key
 const buttondesc = document.getElementById('moviedesc')
 const popularsearch = document.getElementById("popularsearch")
@@ -19,6 +16,39 @@ const tvbutton = document.getElementById("tvpopular")
 const genrets = document.getElementById("genrets")
 popularsearch.addEventListener('click', dumbstuff)
 tvbutton.addEventListener('click', dummytv)
+
+fetch(popularurl).then(res => res.json()).then(data => {
+  mainy.innerHTML = ""
+  /*  console.log(data) */
+
+
+  data.results.forEach(movie => {
+
+    const { title, poster_path, vote_average, id, overview } = movie;
+    const movier = document.createElement('div')
+    movier.classList.add('movieclass')
+    movier.innerHTML = `<img
+     style="height: 190px"
+     src="${imagestuff + poster_path}"
+     alt="${title}"
+   />
+   <div class="movieinfo">
+     <h3>${title}</h3>
+     <span class="${votecolor(vote_average)}">${vote_average}</span>
+     <button id="moviedesc">Check</button> <div id="divoverflow"><p id="overviewfile">${overview}</p></div> 
+    
+   </div>`
+    /*   
+        } */
+    mainy.appendChild(movier)
+  })
+})
+
+
+
+
+
+
 
 
 
