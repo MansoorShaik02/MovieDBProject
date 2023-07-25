@@ -1,1 +1,1 @@
-hello
+This is a Project Made using HTML,CSS,JS and TMDB API that shows various info regarding a Movie. Movies currently airing,Upcoming Movies,Search Movies and TV Shows by Genre,Search bar to search for Specific Movies
